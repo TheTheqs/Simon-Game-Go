@@ -60,20 +60,6 @@ function startOver(){
     gameOn = false;
 };
 
-$("body").keypress(function(){
-    if (!gameOn){
-        gameOn = true;
-        nextSequence();
-    }
-})
-
-$("body").click(function(){
-    if (!gameOn){
-        gameOn = true;
-        nextSequence();
-    }
-})
-
 $('div[type="button"]').click(function(){
     if (canAct){
         canAct = false;
@@ -85,3 +71,9 @@ $('div[type="button"]').click(function(){
     }
 })
 
+setTimeout(function(){
+    if (!gameOn){
+        gameOn = true;
+        nextSequence();
+    }
+}, 1000);
